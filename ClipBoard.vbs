@@ -5,7 +5,7 @@ Dim strCombinedPath, strFileName, strSendAHK, strFullAHK, strClipText, strAHKSen
 
 'ahk string to set alt + ctrl + v to this script
 strAHKSetKey = "^!v::"
-strAHKSetKey2 = "^!::"
+strAHKSetKey2 = "^!c::"
 strEndAHK = "return" & vbNewLine
 strSendAHK = "send "
 strFileName = "\AHKCopy.ahk"
