@@ -1,12 +1,14 @@
 Option Explicit
 'Declaring variables
-Dim objHTML, objFile, objFSO, objWshShell, objOpenFile, strDeskPath, strAHKSetKey, strExecuteVBscript, 
-strCombinedPath, strFileName, strAHKSend, strFullAHK, strClipText, strEndAHKSend dateLastMod
+Dim objHTML, objFile, objFSO, objWshShell, objOpenFile, strDeskPath, strAHKSetKey, strAHKSetKey2, strExecuteVBScript
+Dim strCombinedPath, strFileName, strSendAHK, strFullAHK, strClipText, strAHKSend, strEndAHK, dateLastMod
+
 'ahk string to set alt + ctrl + v to this script
 strAHKSetKey = "^!v::"
 strAHKSetKey2 = "^!::"
-strEndAHKSend = "return"
-strFileName = "AHKCopy.ahk" strAHKSetKey,
+strEndAHK = "return" & vbNewLine
+strSendAHK = "send "
+strFileName = "\AHKCopy.ahk"
 
 
 'using html object to pase the clipboard text
@@ -20,8 +22,8 @@ strDeskPath = objWshShell.SpecialFolders("Desktop")
 Set objWshShell = Nothing
 
 'create the vbscript string variable for a ADK send hardware strokes 
-strAHKSend = "Send " & strClipText
-strExecuteVBScript = strAHKSetKey & vbNewLine & "Run " & strDesktopPath & "\Clipboard.vbs" & vbNewLine & strEndAHKSend & vbNewLine
+strAHKSend = strSendAHK & strClipText & vbNewLine & strEndAHK 
+strExecuteVBScript = strAHKSetKey2 & vbNewLine & "Run " & strDeskPath & "\Clipboard.vbs" & vbNewLine & strEndAHK & vbNewLine
 
 
 
@@ -30,7 +32,7 @@ strExecuteVBScript = strAHKSetKey & vbNewLine & "Run " & strDesktopPath & "\Clip
 strCombinedPath = strDeskPath & "\" & strFileName
 
 'create autohotkey full string
-strFullAHK = strAHKSetKey & vbNewLine & strAHKSend & vbNewLine & strExecuteVBScript
+strFullAHK = strAHKSetKey & vbNewLine & strAHKSend & strExecuteVBScript
 
 'check for AHK file delete if exists
 Set objFSO = CreateObject("Scripting.FileSystemObject")
