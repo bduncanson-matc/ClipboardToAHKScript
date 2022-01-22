@@ -1,0 +1,2 @@
+^!x::
+SendInput %clipboard%
