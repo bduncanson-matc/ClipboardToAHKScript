@@ -1,11 +1,19 @@
 # ClipboardToAHKScript
-Makes your most recent clipboard text item a hardware event allowing you to copy into netlabs.
+Purpose: To turn the most recent clipboard item(Your ctrl+v output) to
+a hardware event driven paste. This allows a host to paste in to web 
+based VM solutions.
 
-To use this script you download AutoHotKey and run then run the file clipboard.ahk on each 
-subsequent system boot. I could add a task schedule setting batch to automate the ahk script 
-on system startup if there is interest.
+### Dependencies:
+AutoHotKey
 
-The default Hotkey is 'Ctrl + shift + d'
+### How to use
+To use this script you download AutoHotKey[](https://www.autohotkey.com/) and run then run the file 
+clipboard.ahk which will make a hot key(Ctrl + Shift + d by default) that pastes your host clipboard paste item
+a hardware event. The .ahk must script must be run on each system boot but could automate scheduling a task with
+a batch script if there is interest.
 
-Dependencies:
-https://www.autohotkey.com/
+Note(You can turn the script off from the tray in the bottom right corner of windows)
+
+
+
+
