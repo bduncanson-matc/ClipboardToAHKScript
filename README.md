@@ -5,7 +5,7 @@ To use this script you download AutoHotKey and run then run the file clipboard.a
 subsequent system boot. I could add a task schedule setting batch to automate the ahk script 
 on system startup if there is interest.
 
-The default Hotkey is 'Ctrl + c + x'
+The default Hotkey is 'Ctrl + shift + x'
 
 Dependencies:
 https://www.autohotkey.com/
